@@ -1,0 +1,13 @@
+gettext
+git
+gradle
+ios-deploy
+ncurses
+openjdk
+pcre
+pcre2
+zsh
+zsh-autosuggestions
+zsh-completions
+zsh-git-prompt
+zsh-syntax-highlighting
