@@ -98,6 +98,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cz="code ~/.zshrc";
+alias sz="source ~/.zshrc";
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
+
+## git aliases
+function gc { git commit -m "$@"; }
+alias gs="git status";
+alias gp="git pull";
+alias gf="git fetch --prune";
+alias gpush="git push";
+alias gd="git diff";
+alias ga="git add .";
+dif() { git diff --color --no-index "$1" "$2" | diff-so-fancy; }
+cdiff() { code --diff "$1" "$2"; }
+
 alias emulateIos="ionic cordova emulate ios --livereload --consolelogs --serverlogs"
 alias emulateAndroid="ionic cordova emulate android --livereload --consolelogs --serverlogs"
 alias status="gh pr status"
@@ -134,5 +151,13 @@ export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 # Mondodb
 
 export MONGODB="mongodb://192.168.1.20/"
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+  fi
 fpath=(/usr/local/share/zsh-completions $fpath)
