@@ -37,8 +37,10 @@ echo "brew installing stuff"
 # tree: really handy for listing out directories in text
 # bat: A cat(1) clone with syntax highlighting and Git integration.
 # switchaudio-osx: allows me to switch the audio device via the command line
-brew install git hub libdvdcss ripgrep imagemagick watchman tree bat \
-switchaudio-osx
+brew install cocoapods coreutils gettext git git-open \
+gradle icu4c ios-deploy ncurses openjdk pcre pcre2 \
+youtube-dl zsh zsh-autosuggestions zsh-completions \
+zsh-git-prompt zsh-syntax-highlighting
 
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash

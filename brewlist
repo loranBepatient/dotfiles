@@ -1,11 +1,16 @@
+cocoapods
+coreutils
 gettext
 git
+git-open
 gradle
+icu4c
 ios-deploy
 ncurses
 openjdk
 pcre
 pcre2
+youtube-dl
 zsh
 zsh-autosuggestions
 zsh-completions
